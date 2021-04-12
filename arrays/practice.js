@@ -19,6 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
+function first(arr){
+  return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +36,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[arr.length - 1]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +53,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family){
+  for (let i = 0; i < family.length; i++){
+    alert(family[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +72,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for (let i = letters.length - 1; i >= 0; i--){
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,8 +91,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
-
+function evenFinder(herp){
+  let derp = [];
+  for (let i = 0; i < herp.length; i++){
+    if (herp[i] % 2 === 0){
+      derp.push(herp[i]);
+    }
+  }
+  return derp;
+}
 
 
 
@@ -107,7 +127,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(herp){
+  let derp = [];
+  let slurp = [];
+  for (let i = 0; i < herp.length; i++){
+    if (herp[i] % 2 === 0){
+      derp.push(herp[i]);
+    }
+    else {
+      slurp.push(herp[i]);
+    }
+  }
+  return [derp, slurp];
 
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -129,7 +162,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(herp){
+  let randomNumber = getRandomArbitrary();
+  for (let i = 0; i < herp.length; i++){
+    if (herp[i] === randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,7 +199,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(list, item) {
+  
+  if (item === undefined){
+    return [];
+  }
 
+  for (let i = 0; i < list.length; i++){
+    if (list[i] === item){
+      list.splice(i, 1);
+    }
+  }
+  
+  return list;
+}
+
+
+function addItem(list, item){
+  if (list === undefined){
+    return [];
+  }
+  list.push(item);
+  return list;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -168,7 +231,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  let derp = [];
+  for (let i = 1; i <= 215; i++){
+    derp.push(i);
+  }
+  return derp;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -184,7 +253,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(derp){
+  for(let i = 0; i < derp.length; i++){
+    derp[i] = parseInt(derp[i]) + 10;
+  }
+  return derp;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -209,8 +283,12 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
-
+function longer(arr1, arr2){
+  if (arr1.length > arr2.length){
+    return arr1;
+  }
+  return arr2; 
+}
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -221,7 +299,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  let newArr = [];
 
+  for (let i = 0; i < arr1.length; i++){
+    for (let k = 0; k < arr2.length; k++){
+      if(arr1[i] === arr2[k]){
+        newArr.push(arr2[k]);
+      }
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -262,7 +351,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(joe, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -271,7 +361,11 @@ var colt = {
 */
 
 //Code Here
-
+for (let i = 0; i < devMountainEmployees.length; i++){
+  if (devMountainEmployees[i] === cahlan){
+    devMountainEmployees.splice(i,1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -283,7 +377,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = [];
 
 
 /*
@@ -301,10 +395,24 @@ var user1 = {
     password: 'hunter2',
     username: 'ihazcode'
 };
+
+var user2 = {
+  name: 'Lord Voldemort',
+  email: 'lvoldemort@eviluniversity.edu',
+  password: 'herp',
+  username: 'derp'
+};
+
+var user3 = {
+  name: 'Chet Leatherstrap',
+  email: 'herp@derp.gov',
+  password: 'fork',
+  username: 'spoon'
+};
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1, user2, user3);
 
 
 /*
@@ -318,7 +426,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (let i = 0; i < users.length; i++){
+  if (users[i].email === 'mark.mciver@devmounta.in'){
+    users.splice(i,1);
+  }
+}
 
 
 /*
